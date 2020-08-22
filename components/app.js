@@ -1,8 +1,9 @@
 class App {
-  constructor(gradeTable) {
+  constructor(gradeTable, pageHeader) {
     this.gradeTable = gradeTable;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
+    this.pageHeader = pageHeader;
   }
 
   handleGetGradesError(error) {
@@ -11,6 +12,13 @@ class App {
 
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
+
+    var total = 0;
+    for (var gradeList = 0; gradeList < grades.length; gradeList++) {
+      total += grades[gradeList].grade;
+    }
+    var averageOfGrades = total / (grades.length);
+    this.pageHeader.updatedAverage(averageOfGrades);
   }
 
   getGrades() {
