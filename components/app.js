@@ -45,7 +45,7 @@ class App {
   }
 
   createGrade(name, course, grade) {
-    console.log(name, course, grade);
+    // console.log(name, course, grade);
     $.ajax({
       type: "POST",
       headers: { "x-access-token": "lP7bPRsj" },
