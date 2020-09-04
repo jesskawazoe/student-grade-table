@@ -4,6 +4,7 @@ class App {
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
     this.pageHeader = pageHeader;
+    
     this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
     this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
     this.gradeForm = gradeForm;
@@ -11,10 +12,16 @@ class App {
     this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
     this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
 
+    this.gradeForm = gradeForm;
+    this.createGrade = this.createGrade.bind(this);
+    this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
+    this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
   }
 
   handleGetGradesError(error) {
     console.error('this is the error: ', [error]);
+
+
   }
 
   handleGetGradesSuccess(grades) {
