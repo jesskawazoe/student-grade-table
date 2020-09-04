@@ -2,11 +2,13 @@
 var table = document.querySelector("table");
 var header = document.querySelector("header");
 var form = document.querySelector("form");
+var pTag = document.getElementsByClassName("pTag");
 
 var gradeForm = new GradeForm(form);
 
 // After you get the table element, but before instantiating App, instantiate GradeTable, passing in the table element.
-var gradeTable = new GradeTable(table);
+//var gradeTable = new GradeTable(table);
+var gradeTable = new GradeTable(table, pTag);
 
 // Before App is instantiated, instantiate PageHeader
 var pageHeader = new PageHeader(header);
